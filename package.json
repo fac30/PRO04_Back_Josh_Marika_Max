@@ -1,0 +1,22 @@
+{
+  "name": "pro04_josh_marika_max",
+  "version": "1.0.0",
+  "description": "E-commerce Site For Vinyl Store",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.4",
+    "express": "^4.21.1",
+    "vite": "^5.4.9"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
