@@ -2,11 +2,11 @@
   "name": "pro04_josh_marika_max",
   "version": "1.0.0",
   "description": "E-commerce Site For Vinyl Store",
-  "main": "index.js",
+  "main": "./src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js",
-    "dev": "nodemon index.js"
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
   },
   "keywords": [],
   "author": "",
