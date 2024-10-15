@@ -3,6 +3,7 @@ Back End For E-commerce Site Selling Vinyl Store
 
 ## Database Schema
 
+```mermaid
 graph LR
   customers -->|location_id| locations
   customers -->|customer_id| transactions
@@ -36,3 +37,4 @@ graph LR
   shopping_cart -->|vinyl_id| shopping_vinyls
   shopping_cart -->|shopping_cart_id| shopping_vinyls
   shopping_vinyls -->|vinyl_id| vinyls
+  ```
