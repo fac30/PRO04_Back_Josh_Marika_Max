@@ -38,3 +38,4 @@ graph LR
   shopping_cart -->|shopping_cart_id| shopping_vinyls
   shopping_vinyls -->|vinyl_id| vinyls
   ```
+![database schema](./docs/database-schema.svg)
