@@ -73,6 +73,7 @@ This document describes the latest schema of the database for the vinyl records 
 - **new_release_id**: Boolean, indicates if it is a new release.
 - **time_range_id**: Integer, references the **time_range** table.
 - **label_id**: Integer, references the **label** table.
+- **image_url**: Varchar, url link to hosted record artwork image.
 - **discount**: Integer, discount on the vinyl.
 - **on_sale**: Boolean, indicates if the vinyl is on sale.
 
