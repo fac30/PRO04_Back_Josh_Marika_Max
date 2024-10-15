@@ -16,7 +16,6 @@ app.get("/vinyls", async (req: Request, res: Response) => {
   }
 });
 
-// Start the server
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });

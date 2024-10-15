@@ -8,16 +8,16 @@ interface Vinyl {
   artist: string;
   title: string;
   release_date: string;
-  limited_edition?: boolean;
-  new_release?: boolean;
-  discount?: number;
-  on_sale?: boolean;
-  genre?: string;
-  condition?: string;
-  price_range?: string;
-  album_or_single?: string;
-  time_range?: string;
-  label?: string;
+  limited_edition: boolean;
+  new_release: boolean;
+  discount: number;
+  on_sale: boolean;
+  genre: string;
+  condition: string;
+  price_range: string;
+  album_or_single: string;
+  time_range: string;
+  label: string;
 }
 
 const dbRequest = async (): Promise<Vinyl[]> => {
@@ -26,4 +26,4 @@ const dbRequest = async (): Promise<Vinyl[]> => {
   return data || [];
 };
 
-export default dbRequest; // Use ES module syntax
+export default dbRequest;
