@@ -1,22 +1,20 @@
 {
-  "name": "pro04_josh_marika_max",
-  "version": "1.0.0",
-  "description": "E-commerce Site For Vinyl Store",
-  "main": "./src/index.js",
+  "name": "vite-project",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/index.js",
-    "dev": "nodemon src/index.js"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "@supabase/supabase-js": "^2.45.4",
-    "express": "^4.21.1",
-    "vite": "^5.4.9"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
   },
   "devDependencies": {
-    "nodemon": "^3.1.7"
+    "nodemon": "^3.1.7",
+    "typescript": "^5.5.3",
+    "vite": "^5.4.8"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.4",
+    "express": "^4.21.1"
   }
 }
