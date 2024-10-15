@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "name": "vite-project",
   "private": true,
@@ -20,3 +21,29 @@
     "express": "^4.21.1"
   }
 }
+=======
+{
+  "name": "vite-project",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/config-conventional": "^19.5.0",
+    "husky": "^9.1.6",
+    "nodemon": "^3.1.7",
+    "typescript": "^5.5.3",
+    "vite": "^5.4.8"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.4",
+    "express": "^4.21.1"
+  }
+}
+>>>>>>> main
