@@ -1,5 +1,5 @@
 import request from 'supertest';
-import { app } from '../src/index';
+import { app } from '../src/main';
 
 describe('GET /vinyls', () => {
     it('should retrieve a list of all vinyl records', async () => {

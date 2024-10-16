@@ -1,5 +1,5 @@
 import request from 'supertest';
-import { app } from '../src/index';
+import { app } from '../src/main';
 
 describe('GET /transactions', () => {
     it('should retrieve a list of all transactions', async () => {

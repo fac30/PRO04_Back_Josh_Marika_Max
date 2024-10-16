@@ -1,5 +1,5 @@
 import request from 'supertest';
-import { app } from '../src/index';
+import { app } from '../src/main';
 
 describe('POST /reviews', () => {
     it('should create a new review', async () => {
