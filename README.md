@@ -65,7 +65,7 @@ This document describes the latest schema of the database for the vinyl records 
 - **artist**: Varchar, name of the artist (not null).
 - **title**: Varchar, title of the vinyl (not null).
 - **release_date**: Timestamp, release date of the vinyl.
-- **limited_edition**: Boolean, indicates if the vinyl is a limited edition.
+- **limited_edition**: Boolean, indicates if the vinyl is a limited edition (default is false).
 - **genre_id**: Integer, references the **genres** table (not null).
 - **condition_id**: Integer, references the **condition** table (not null).
 - **price_range_id**: Integer, references the **price_range** table (not null).
@@ -74,8 +74,8 @@ This document describes the latest schema of the database for the vinyl records 
 - **time_range_id**: Integer, references the **time_range** table (not null).
 - **label_id**: Integer, references the **label** table (not null).
 - **image_url**: Varchar, URL of the vinyl image.
-- **discount**: Integer, discount on the vinyl.
-- **on_sale**: Boolean, indicates if the vinyl is on sale (not null).
+- **discount**: Integer, discount on the vinyl in percentage (default is 0).
+- **on_sale**: Boolean, indicates if the vinyl is on sale (not null, default is false).
 
 #### 11. Format Table
 - **id**: Integer, primary key.
@@ -98,7 +98,7 @@ This document describes the latest schema of the database for the vinyl records 
 - **date**: Timestamp, date of the transaction (not null).
 - **status_id**: Integer, references the **status** table.
 - **delivery_time**: Interval, estimated delivery time.
-- **buy_or_sell**: Boolean, indicates if it is a buy or sell transaction (not null).
+- **is_sell**: Boolean, indicates if it is a buy or sell transaction (not null, default is true).
 - **transaction_number**: Varchar, unique transaction identifier (not null).
 - **customer_id**: Integer, references the **customers** table.
 - **created_at**: Timestamp, date and time when the transaction was created (default is now).
