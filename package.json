@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon --exec tsx src/main.ts",
+    "dev": "nodemon --exec tsx src/main.ts",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "prepare": "husky",
@@ -23,11 +24,14 @@
     "supertest": "^7.0.0",
     "ts-jest": "^29.2.5",
     "tsx": "^4.19.1",
+    "tsx": "^4.19.1",
     "typescript": "^5.5.3",
     "vite": "^5.4.8"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.45.4",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
     "@types/jest": "^29.5.13",
     "express": "^4.21.1",
     "ts-node": "^10.9.2"
