@@ -1,14 +1,80 @@
-[
-    "locations",
-    "sessions",
-    "genres",
-    "conditions",
-    "price_ranges",
-    "collection_types",
-    "time_periods",
-    "labels",
-    "vinyls",
-    "shipping_options",
-    "transactions",
-    "reviews"
-]
+{
+    "locations": {
+        "GET": true,
+        "POST": false,
+        "PATCH": false,
+        "DELETE": false
+    },
+    "customers": {
+        "GET": true,
+        "POST": true,
+        "PATCH": true,
+        "DELETE": true
+    },
+    "sessions": {
+        "GET": true,
+        "POST": true,
+        "PATCH": true,
+        "DELETE": true
+    },
+    "genres": {
+        "GET": true,
+        "POST": false,
+        "PATCH": false,
+        "DELETE": false
+    },
+    "conditions": {
+        "GET": true,
+        "POST": false,
+        "PATCH": false,
+        "DELETE": false
+    },
+    "price_ranges": {
+        "GET": true,
+        "POST": false,
+        "PATCH": false,
+        "DELETE": false
+    },
+    "collection_types": {
+        "GET": true,
+        "POST": false,
+        "PATCH": false,
+        "DELETE": false
+    },
+    "time_periods": {
+        "GET": true,
+        "POST": false,
+        "PATCH": false,
+        "DELETE": false
+    },
+    "labels": {
+        "GET": true,
+        "POST": false,
+        "PATCH": false,
+        "DELETE": false
+    },
+    "vinyls": {
+        "GET": true,
+        "POST": false,
+        "PATCH": false,
+        "DELETE": false
+    },
+    "shipping_options": {
+        "GET": true,
+        "POST": false,
+        "PATCH": false,
+        "DELETE": false
+    },
+    "transactions": {
+        "GET": true,
+        "POST": true,
+        "PATCH": true,
+        "DELETE": true
+    },
+    "reviews": {
+        "GET": true,
+        "POST": true,
+        "PATCH": true,
+        "DELETE": true
+    }
+}
