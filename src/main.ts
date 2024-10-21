@@ -1,22 +1,25 @@
 import express, { Request, Response } from "express";
-import cors from "cors"; // Use import instead of require
-import dbRequest from "./database/vinyl-data"; // Assuming this is your data-fetching function
+import cors from "cors";
+import dbRequest from "./database/dbRequest";
+import endpoints from "./database/endpoints.json"
 
 const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(express.json());
-app.use(cors()); // Enable CORS for all routes
+app.use(cors());
 
-app.get("/vinyls", async (req: Request, res: Response) => {
-  try {
-    const vinyls = await dbRequest(); // Fetch data from your database
-    res.status(200).json(vinyls); // Send vinyl data as JSON
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: "Error fetching vinyl data" }); // Handle errors
-  }
-});
+endpoints.map(endpoint => {
+  app.get(`/${endpoint}`, async (req: Request, res: Response) => {
+    try {
+      const data = await dbRequest(endpoint);
+      res.status(200).json(data);
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ message: `Error fetching ${endpoint} data` });
+    }
+  });
+})
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
