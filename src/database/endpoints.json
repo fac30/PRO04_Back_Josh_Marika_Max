@@ -1,0 +1,14 @@
+[
+    "locations",
+    "sessions",
+    "genres",
+    "conditions",
+    "price_ranges",
+    "collection_types",
+    "time_periods",
+    "labels",
+    "vinyls",
+    "shipping_options",
+    "transactions",
+    "reviews"
+]
