@@ -11,9 +11,9 @@ app.use(cors());
 
 Object.entries(endpoints).forEach(([endpoint, methods]) => {
   if (methods.GET) {
-    app.get(`/${endpoint}`, async (req: Request, res: Response) => {
+    app.get(`/${endpoint}`, async (_req: Request, res: Response) => {
       try {
-        const data = await dbGet(endpoint); // Call dbRequest with the endpoint name
+        const data = await dbGet(endpoint);
         res.status(200).json(data);
       } catch (error) {
         console.error(error);
@@ -24,7 +24,7 @@ Object.entries(endpoints).forEach(([endpoint, methods]) => {
   if (methods.POST) {
     app.post(`/${endpoint}`, async (req: Request, res: Response) => {
       try {
-        const data = await dbPost(endpoint, req.body); // Handle POST logic
+        const data = await dbPost(endpoint, req.body);
         res.status(201).json(data);
       } catch (error) {
         console.error(error);
@@ -36,7 +36,7 @@ Object.entries(endpoints).forEach(([endpoint, methods]) => {
     app.patch(`/${endpoint}/:id`, async (req: Request, res: Response) => {
       const { id } = req.params;
       try {
-        const data = await dbPatch(endpoint, id, req.body); // Handle PATCH logic
+        const data = await dbPatch(endpoint, id, req.body);
         res.status(200).json(data);
       } catch (error) {
         console.error(error);
@@ -48,7 +48,7 @@ Object.entries(endpoints).forEach(([endpoint, methods]) => {
     app.delete(`/${endpoint}/:id`, async (req: Request, res: Response) => {
       const { id } = req.params;
       try {
-        const data = await dbDelete(endpoint, id); // Handle DELETE logic
+        const data = await dbDelete(endpoint, id);
         res.status(200).json({ message: `${endpoint} with ID ${id} deleted successfully` });
       } catch (error) {
         console.error(error);
