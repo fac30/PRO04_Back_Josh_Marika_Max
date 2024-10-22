@@ -9,12 +9,12 @@ CREATE TABLE customers (
   id SERIAL PRIMARY KEY,
   username VARCHAR NOT NULL UNIQUE,
   password_hash VARCHAR NOT NULL,
-  salt VARCHAR NULL UNIQUE,
   email VARCHAR NOT NULL UNIQUE,
   phone_number VARCHAR,
   payment_details VARCHAR,
   date_of_birth TIMESTAMP,
   street_address VARCHAR NOT NULL,
+  city VARCHAR NOT NULL,
   location_id INTEGER REFERENCES locations(id) NOT NULL,
   created_at TIMESTAMP DEFAULT NOW()
 );
@@ -51,7 +51,7 @@ CREATE TABLE collection_types (
 CREATE TABLE new_release (
   id SERIAL PRIMARY KEY,
   threshold_months INTEGER NOT NULL UNIQUE,
-  new_release VARCHAR NOT NULL UNIQUE
+  new_release BOOLEAN DEFAULT true
 );
 
 CREATE TABLE time_periods (
@@ -95,6 +95,7 @@ CREATE TABLE formats (
 CREATE TABLE discs (
   id SERIAL PRIMARY KEY,
   vinyl_id INTEGER REFERENCES vinyls(id),
+  image_url VARCHAR,
   side_a VARCHAR,
   side_b VARCHAR,
   format_id INTEGER REFERENCES formats(id),
@@ -108,6 +109,7 @@ CREATE TABLE statuses (
 
 CREATE TABLE shipping_options (
   id SERIAL PRIMARY KEY,
+  shipping_option VARCHAR NOT NULL UNIQUE,
   price FLOAT NOT NULL,
   lead_time TIMESTAMP,
   location_id INTEGER REFERENCES locations(id)
@@ -117,7 +119,7 @@ CREATE TABLE transactions (
   id SERIAL PRIMARY KEY,
   date TIMESTAMP NOT NULL,
   status_id INTEGER REFERENCES statuses(id),
-  delivery_time INTERVAL,
+  delivery_date TIMESTAMP DEFAULT NOW() + INTERVAL '4 days',
   is_sell BOOLEAN NOT NULL DEFAULT true,
   transaction_number VARCHAR NOT NULL UNIQUE,
   customer_id INTEGER REFERENCES customers(id),
