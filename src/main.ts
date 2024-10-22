@@ -1,10 +1,11 @@
 import express from 'express';
 import cors from 'cors';
 import genericEndpoints from './routes/genericEndpoints';
-import registerRoutes from './routes/register';
-import loginRoutes from './routes/login';
-import checkSessionRoutes from './routes/checkSession';
-import vinylRoutes from './routes/vinyls';
+import register from './routes/register';
+import login from './routes/login';
+import checkSession from './routes/checkSession';
+import vinyls from './routes/vinyls';
+import transactions from './routes/transactions';
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -14,10 +15,10 @@ app.use(cors());
 
 // Use the routes
 app.use(genericEndpoints);
-app.use(registerRoutes);
-app.use(loginRoutes);
-app.use(checkSessionRoutes);
-app.use(vinylRoutes);
+app.use(register);
+app.use(login);
+app.use(checkSession);
+app.use(transactions);
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
