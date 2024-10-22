@@ -58,6 +58,21 @@ Object.entries(endpoints).forEach(([endpoint, methods]) => {
   }
 });
 
+
+app.post('/register', async (req: Request, res: Response) => {
+  try {
+    const customer = await dbPost('customers', req.body);
+    if (!customer) {
+      throw new Error('Failed to insert customer');
+    }
+    const session = await dbPost('sessions', { customer_id: customer.id });
+    res.status(201).json({ customer, session });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: `Error registering customer and creating session`, error });
+  }
+});
+
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });

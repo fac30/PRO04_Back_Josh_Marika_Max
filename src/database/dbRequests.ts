@@ -7,9 +7,9 @@ export async function dbGet(table: string) {
 }
 
 export async function dbPost(table: string, data: any) {
-    const { data: insertedData, error } = await supabase.from(table).insert([data]);
+    const { data: insertedData, error } = await supabase.from(table).insert([data]).select();;
     if (error) throw error;
-    return insertedData || [];
+    return insertedData ? insertedData[0] : null;
 }
 
 export async function dbPatch(table: string, id: string | number, data: any) {
