@@ -19,7 +19,7 @@ VALUES
 ('Reggae'),
 ('Rock'),
 ('Soul'),
-('World'); 
+('World');
 
 INSERT INTO conditions (condition)
 VALUES 
@@ -43,9 +43,9 @@ VALUES
 ('Album'),
 ('Live');
 
-INSERT INTO new_release (threshold_months, new_release)
+INSERT INTO new_release (threshold_months)
 VALUES 
-(3, 'New Release');
+(3);
 
 INSERT INTO time_periods (period_start, period_end, time_period)
 VALUES
@@ -78,7 +78,7 @@ VALUES
 INSERT INTO locations (region)
 VALUES 
 ('North East'),
-('North West '),
+('North West'),
 ('Yorkshire and the Humber'),
 ('East Midlands'),
 ('West Midlands'),
@@ -87,8 +87,66 @@ VALUES
 ('South East'),
 ('South West');
 
+INSERT INTO locations (country)
+VALUES 
+('France'),
+('Spain'),
+('Italy'),
+('Germany'),
+('Sweden'),
+('Denmark'),
+('Netherlands'),
+('Norway'),
+('Croatia');
+
 INSERT INTO formats (format)
 VALUES 
 ('7-inch'),
 ('10-inch'),
 ('12-inch');
+
+INSERT INTO statuses (status)
+VALUES 
+('In cart'),
+('Ordered'),
+('Dispatched'),
+('In transit'),
+('Delivered');
+
+INSERT INTO shipping_options (shipping_option, price, lead_time_days)
+VALUES 
+('Standard', 0.00, 4),
+('Express', 4.99, 2),
+('International', 9.99, 5);
+
+INSERT INTO shipping_locations (shipping_option_id, location_id)
+VALUES
+((SELECT id FROM shipping_options WHERE shipping_option = 'Standard'), (SELECT id FROM locations WHERE region = 'North East')),
+((SELECT id FROM shipping_options WHERE shipping_option = 'Standard'), (SELECT id FROM locations WHERE region = 'North West')),
+((SELECT id FROM shipping_options WHERE shipping_option = 'Standard'), (SELECT id FROM locations WHERE region = 'Yorkshire and the Humber')),
+((SELECT id FROM shipping_options WHERE shipping_option = 'Standard'), (SELECT id FROM locations WHERE region = 'East Midlands')),
+((SELECT id FROM shipping_options WHERE shipping_option = 'Standard'), (SELECT id FROM locations WHERE region = 'West Midlands')),
+((SELECT id FROM shipping_options WHERE shipping_option = 'Standard'), (SELECT id FROM locations WHERE region = 'East of England')),
+((SELECT id FROM shipping_options WHERE shipping_option = 'Standard'), (SELECT id FROM locations WHERE region = 'London')),
+((SELECT id FROM shipping_options WHERE shipping_option = 'Standard'), (SELECT id FROM locations WHERE region = 'South East')),
+((SELECT id FROM shipping_options WHERE shipping_option = 'Standard'), (SELECT id FROM locations WHERE region = 'South West')),
+
+((SELECT id FROM shipping_options WHERE shipping_option = 'Express'), (SELECT id FROM locations WHERE region = 'North East')),
+((SELECT id FROM shipping_options WHERE shipping_option = 'Express'), (SELECT id FROM locations WHERE region = 'North West')),
+((SELECT id FROM shipping_options WHERE shipping_option = 'Express'), (SELECT id FROM locations WHERE region = 'Yorkshire and the Humber')),
+((SELECT id FROM shipping_options WHERE shipping_option = 'Express'), (SELECT id FROM locations WHERE region = 'East Midlands')),
+((SELECT id FROM shipping_options WHERE shipping_option = 'Express'), (SELECT id FROM locations WHERE region = 'West Midlands')),
+((SELECT id FROM shipping_options WHERE shipping_option = 'Express'), (SELECT id FROM locations WHERE region = 'East of England')),
+((SELECT id FROM shipping_options WHERE shipping_option = 'Express'), (SELECT id FROM locations WHERE region = 'London')),
+((SELECT id FROM shipping_options WHERE shipping_option = 'Express'), (SELECT id FROM locations WHERE region = 'South East')),
+((SELECT id FROM shipping_options WHERE shipping_option = 'Express'), (SELECT id FROM locations WHERE region = 'South West')),
+
+((SELECT id FROM shipping_options WHERE shipping_option = 'International'), (SELECT id FROM locations WHERE country = 'France')),
+((SELECT id FROM shipping_options WHERE shipping_option = 'International'), (SELECT id FROM locations WHERE country = 'Spain')),
+((SELECT id FROM shipping_options WHERE shipping_option = 'International'), (SELECT id FROM locations WHERE country = 'Italy')),
+((SELECT id FROM shipping_options WHERE shipping_option = 'International'), (SELECT id FROM locations WHERE country = 'Germany')),
+((SELECT id FROM shipping_options WHERE shipping_option = 'International'), (SELECT id FROM locations WHERE country = 'Sweden')),
+((SELECT id FROM shipping_options WHERE shipping_option = 'International'), (SELECT id FROM locations WHERE country = 'Denmark')),
+((SELECT id FROM shipping_options WHERE shipping_option = 'International'), (SELECT id FROM locations WHERE country = 'Netherlands')),
+((SELECT id FROM shipping_options WHERE shipping_option = 'International'), (SELECT id FROM locations WHERE country = 'Norway')),
+((SELECT id FROM shipping_options WHERE shipping_option = 'International'), (SELECT id FROM locations WHERE country = 'Croatia'));
