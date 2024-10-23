@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon --exec tsx src/main.ts",
+    "seed": "tsx src/database/seed.ts",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "prepare": "husky",

@@ -1,15 +1,19 @@
--- Create a trigger function to update price_range_id and time_period_id in the vinyls table based on conditions
-
--- Create function to calculate price_range_id based on price
-CREATE OR REPLACE FUNCTION update_price_range() RETURNS TRIGGER AS $$
+CREATE OR REPLACE FUNCTION update_price_range()
+RETURNS TRIGGER AS $$
+DECLARE
+    final_price NUMERIC;
 BEGIN
+    IF NEW.on_sale THEN
+        final_price := NEW.price * (1 - NEW.discount / 100);
+    ELSE
+        final_price := NEW.price;
+    END IF;
     NEW.price_range_id := (SELECT id FROM price_ranges
-                          WHERE NEW.price BETWEEN range_start AND range_end);
+                           WHERE final_price BETWEEN range_start AND range_end);
     RETURN NEW;
 END;
 $$ LANGUAGE plpgsql;
 
--- Create function to calculate time_period_id based on release_date
 CREATE OR REPLACE FUNCTION update_time_period() RETURNS TRIGGER AS $$
 BEGIN
     NEW.time_period_id := (SELECT id FROM time_periods
@@ -18,7 +22,6 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
--- Create function to calculate new_release based on release_date
 CREATE OR REPLACE FUNCTION update_new_release() RETURNS TRIGGER AS $$
 BEGIN
     NEW.new_release := EXISTS (
@@ -29,12 +32,6 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
--- Drop existing triggers to allow rerunning with updated triggers
-DROP TRIGGER IF EXISTS trigger_update_price_range ON vinyls;
-DROP TRIGGER IF EXISTS trigger_update_time_period ON vinyls;
-DROP TRIGGER IF EXISTS trigger_update_new_release ON vinyls;
-
--- Create triggers for the vinyls table to automatically update price_range_id, time_period_id, and new_release
 CREATE TRIGGER trigger_update_price_range
     BEFORE INSERT OR UPDATE ON vinyls
     FOR EACH ROW

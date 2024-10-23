@@ -1,0 +1,26 @@
+DROP TRIGGER IF EXISTS trigger_update_price_range ON vinyls;
+DROP TRIGGER IF EXISTS trigger_update_time_period ON vinyls;
+DROP TRIGGER IF EXISTS trigger_update_new_release ON vinyls;
+
+DROP TABLE IF EXISTS shopping_vinyls;
+DROP TABLE IF EXISTS shopping_cart;
+DROP TABLE IF EXISTS shipping_locations;
+DROP TABLE IF EXISTS deliveries;
+DROP TABLE IF EXISTS shipping_options CASCADE;
+DROP TABLE IF EXISTS transactions_vinyls;
+DROP TABLE IF EXISTS reviews;
+DROP TABLE IF EXISTS transactions;
+DROP TABLE IF EXISTS statuses;
+DROP TABLE IF EXISTS discs;
+DROP TABLE IF EXISTS formats;
+DROP TABLE IF EXISTS vinyls;
+DROP TABLE IF EXISTS labels;
+DROP TABLE IF EXISTS time_periods;
+DROP TABLE IF EXISTS new_release;
+DROP TABLE IF EXISTS collection_types;
+DROP TABLE IF EXISTS price_ranges;
+DROP TABLE IF EXISTS conditions;
+DROP TABLE IF EXISTS genres;
+DROP TABLE IF EXISTS customers;
+DROP TABLE IF EXISTS locations;
+DROP TABLE IF EXISTS sessions;
