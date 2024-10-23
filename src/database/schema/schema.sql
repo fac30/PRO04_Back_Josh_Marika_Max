@@ -1,7 +1,7 @@
 CREATE TABLE locations (
   id SERIAL PRIMARY KEY,
   country VARCHAR NOT NULL DEFAULT 'United Kingdom',
-  region VARCHAR UNIQUE,
+  region VARCHAR UNIQUE NULL,
   created_at TIMESTAMP DEFAULT NOW()
 );
 
@@ -111,8 +111,14 @@ CREATE TABLE shipping_options (
   id SERIAL PRIMARY KEY,
   shipping_option VARCHAR NOT NULL UNIQUE,
   price FLOAT NOT NULL,
-  lead_time TIMESTAMP,
-  location_id INTEGER REFERENCES locations(id)
+  lead_time_days INTEGER
+);
+
+CREATE TABLE shipping_locations (
+  id SERIAL PRIMARY KEY,
+  shipping_option_id INTEGER REFERENCES shipping_options(id) ON DELETE CASCADE,
+  location_id INTEGER REFERENCES locations(id) ON DELETE CASCADE,
+  UNIQUE (shipping_option_id, location_id)
 );
 
 CREATE TABLE transactions (
@@ -125,9 +131,8 @@ CREATE TABLE transactions (
   customer_id INTEGER REFERENCES customers(id),
   created_at TIMESTAMP DEFAULT NOW(),
   tracking_number INTEGER,
-  shipping_options_id INTEGER REFERENCES shipping_options(id)
+  shipping_option_id INTEGER REFERENCES shipping_options(id)
 );
-
 
 CREATE TABLE reviews (
   id SERIAL PRIMARY KEY,
@@ -140,12 +145,7 @@ CREATE TABLE reviews (
 
 CREATE TABLE transactions_vinyls (
   id SERIAL PRIMARY KEY,
-  transactions_id INTEGER REFERENCES transactions(id) NOT NULL,
-  vinyl_id INTEGER REFERENCES vinyls(id) NOT NULL
-);
-
-CREATE TABLE shipping_locations (
-  id SERIAL PRIMARY KEY,
-  shipping_options_id INTEGER REFERENCES shipping_options(id),
-  location_id INTEGER REFERENCES locations(id)
+  transaction_id INTEGER REFERENCES transactions(id) ON DELETE CASCADE,
+  vinyl_id INTEGER REFERENCES vinyls(id) ON DELETE CASCADE,
+  UNIQUE (transaction_id, vinyl_id)
 );
