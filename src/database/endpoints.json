@@ -54,7 +54,7 @@
         "DELETE": false
     },
     "vinyls": {
-        "GET": true,
+        "GET": false,
         "POST": false,
         "PATCH": false,
         "DELETE": false

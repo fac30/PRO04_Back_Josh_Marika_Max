@@ -4,34 +4,69 @@ interface DbGetParams {
     columns?: string;
     where?: { [key: string]: any };
     and?: { [key: string]: any };
-    join?: { relatedTable: string; foreignKey: string; columns: string };
+    join?: { relatedTable: string; foreignKey: string; columns: string | string[] } | Array<{ relatedTable: string; foreignKey: string; columns: string | string[] }>;
 }
 
 export async function dbGet<T>(table: string, params?: DbGetParams): Promise<T[]> {
     let query = supabase.from(table).select(params?.columns ? params.columns : "*");
+
     if (params?.where) {
-        for (const [key, value] of Object.entries(params.where)) {
-            query = query.eq(key, value);
-        }
+      for (const [key, value] of Object.entries(params.where)) {
+        query = query.eq(key, value);
+      }
     }
+
     if (params?.and) {
-        for (const [key, value] of Object.entries(params.and)) {
-            query = query.eq(key, value);
-        }
+      for (const [key, value] of Object.entries(params.and)) {
+        query = query.eq(key, value);
+      }
     }
+
     if (params?.join) {
-        const { relatedTable, foreignKey, columns } = params.join;
-        query = supabase.from(table).select(`${params.columns}, ${relatedTable}!${foreignKey}(${columns})`);
+      const joins = Array.isArray(params.join) ? params.join : [params.join];
+  
+      const joinExpressions = joins.map(join => {
+        const { relatedTable, columns } = join;
+        return `${relatedTable}(${columns || '*'})`;
+      });
+  
+      const mainTableColumns = params?.columns ? params.columns : '*';
+      const joinedColumns = `${mainTableColumns}, ${joinExpressions.join(', ')}`;
+  
+      query = supabase.from(table).select(joinedColumns);
     }
+  
     const { data, error } = await query;
+  
     if (error) {
-        throw new Error(`Error fetching data from ${table}: ${error.message}`);
+      throw new Error(`Error fetching data from ${table}: ${error.message}`);
     }
     if (!data) {
-        throw new Error(`No data returned from ${table}`);
+      throw new Error(`No data returned from ${table}`);
     }
-    return data as T[];
-}
+  
+    const flattenedData = data.map((item: any) => {
+      if (params?.join) {
+        const joins = Array.isArray(params.join) ? params.join : [params.join];
+        for (const join of joins) {
+          const { relatedTable, columns } = join;
+          if (item[relatedTable]) {
+            const selectedColumns = Array.isArray(columns) ? columns : [columns];
+            selectedColumns.forEach(col => {
+              if (item[relatedTable][col] !== undefined) {
+                item[col] = item[relatedTable][col];
+              }
+            });
+            delete item[relatedTable];
+          }
+        }
+      }
+      return item;
+    });
+  
+    return flattenedData as T[];
+  }  
+  
 
 export async function dbPost(table: string, data: any) {
     const { data: insertedData, error } = await supabase.from(table).insert([data]).select();;
@@ -50,3 +85,6 @@ export async function dbDelete(table: string, id: string | number) {
     if (error) throw error;
     return deletedData || [];
 }
+  
+  
+  
