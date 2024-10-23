@@ -18,6 +18,7 @@ app.use(genericEndpoints);
 app.use(register);
 app.use(login);
 app.use(checkSession);
+app.use(vinyls);
 app.use(transactions);
 
 app.listen(port, () => {
