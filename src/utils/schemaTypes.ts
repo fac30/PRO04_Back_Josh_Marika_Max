@@ -101,17 +101,16 @@ export interface ShippingOption extends BaseEntity {
     lead_time_days?: Date;
 }
 
-interface Transaction extends BaseEntity {
-  date: string; // TIMESTAMP
-  status_id: number; // Foreign key to statuses
-  delivery_date: string; // TIMESTAMP
-  is_sell: boolean;
-  transaction_number: string;
-  customer_id: number; // Foreign key to customers
-  tracking_number?: number;
-  shipping_option_id?: number; // Foreign key to shipping_options
+export interface Transaction extends BaseEntity {
+    date: Date;
+    status_id?: number; // foreign key to statuses
+    delivery_time?: string;
+    is_sell: boolean;
+    transaction_number: string;
+    customer_id?: number; // foreign key to customers
+    tracking_number?: number;
+    shipping_options_id?: number; // foreign key to shipping_options
 }
-
 
 export interface Review extends BaseEntity {
     score: number;
@@ -129,4 +128,3 @@ export interface ShippingLocation extends BaseEntity {
     shipping_options_id: number; // foreign key to shipping_options
     location_id: number; // foreign key to locations
 }
-  
