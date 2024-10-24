@@ -1,5 +1,8 @@
 import { Request, Response, Router } from 'express';
-import { dbGet, dbPost, dbPatch, dbDelete } from "../database/dbRequests";
+import { dbGet } from '../models/dbGet';
+import { dbPost } from '../models/dbPost';
+import { dbPatch } from '../models/dbPatch';
+import { dbDelete } from '../models/dbDelete';
 import endpoints from '../database/endpoints.json';
 
 const router = Router();

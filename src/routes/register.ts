@@ -1,5 +1,6 @@
 import { Request, Response, Router } from 'express';
-import { dbPost, dbGet } from '../database/dbRequests';
+import { dbGet } from '../models/dbGet';
+import { dbPost } from '../models/dbPost';
 import { Customer } from "../utils/schemaTypes";
 
 const router = Router();
@@ -7,7 +8,7 @@ const router = Router();
 router.post('/register', async (req: Request, res: Response) => {
     try {
       const customer = await dbPost('customers', req.body);
-      if (!customer) {
+      if (!customer || !customer.id) {
         throw new Error('Failed to insert customer');
       }
       const updatedCustomer = await dbGet<Customer>('customers', {
@@ -18,6 +19,7 @@ router.post('/register', async (req: Request, res: Response) => {
           columns: ['region', 'country']
         }
       });
+      console.log(updatedCustomer);
       const session = await dbPost('sessions', { customer_id: customer.id });
       res.status(201).json({ customer: updatedCustomer[0], session });
     } catch (error) {

@@ -7,6 +7,7 @@ import logout from './routes/logout';
 import checkSession from './routes/checkSession';
 import vinyls from './routes/vinyls';
 import transactions from './routes/transactions';
+import shippingOptions from './routes/shippingOptions';
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -22,6 +23,7 @@ app.use(logout);
 app.use(checkSession);
 app.use(vinyls);
 app.use(transactions);
+app.use(shippingOptions);
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);

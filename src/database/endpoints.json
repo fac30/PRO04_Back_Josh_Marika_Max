@@ -76,5 +76,11 @@
         "POST": true,
         "PATCH": true,
         "DELETE": true
+    },
+    "transactions_vinyls": {
+        "GET": true,
+        "POST": true,
+        "PATCH": true,
+        "DELETE": true
     }
 }
