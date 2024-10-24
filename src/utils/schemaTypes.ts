@@ -2,12 +2,7 @@ export interface BaseEntity {
     id: number;
     created_at?: Date;
 }
-  
-export interface ExpirableEntity extends BaseEntity {
-    expires_at?: Date;
-}
 
-// locations table
 export interface Location extends BaseEntity {
     country: string;
     region?: string;
@@ -16,17 +11,18 @@ export interface Location extends BaseEntity {
 export interface Customer extends BaseEntity {
     username: string;
     password_hash: string;
-    salt?: string; // nullable unique
     email: string;
     phone_number?: string;
     payment_details?: string;
     date_of_birth?: Date;
     street_address: string;
+    city: string;
     location_id: number; // foreign key reference to locations
 }
 
-export interface Session extends ExpirableEntity {
+export interface Session extends BaseEntity {
     customer_id: number; // foreign key reference to customers
+    expires_at: string;
 }
 
 export interface Genre extends BaseEntity {
@@ -88,6 +84,7 @@ export interface Format extends BaseEntity {
 
 export interface Disc extends BaseEntity {
     vinyl_id: number; // foreign key to vinyls
+    image_url?: string;
     side_a?: string;
     side_b?: string;
     format_id?: number; // foreign key to formats
@@ -99,9 +96,9 @@ export interface Status extends BaseEntity {
 }
 
 export interface ShippingOption extends BaseEntity {
+    shipping_option: string;
     price: number;
-    lead_time?: Date;
-    location_id?: number; // foreign key to locations
+    lead_time_days?: Date;
 }
 
 export interface Transaction extends BaseEntity {
@@ -131,4 +128,3 @@ export interface ShippingLocation extends BaseEntity {
     shipping_options_id: number; // foreign key to shipping_options
     location_id: number; // foreign key to locations
 }
-  

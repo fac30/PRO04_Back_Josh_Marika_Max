@@ -9,7 +9,7 @@ router.post('/login', async (req: Request, res: Response) => {
       const { username, password_hash } = req.body;
       
       const customers: Customer[] = await dbGet<Customer>('customers', {
-        where: { username, password_hash },
+        where: { username },
         join: {
           relatedTable: 'locations',
           foreignKey: 'location_id',
@@ -17,7 +17,7 @@ router.post('/login', async (req: Request, res: Response) => {
         }
       });
   
-      if (customers.length === 0) {
+      if (customers.length === 0 || customers[0].password_hash != password_hash) {
         res.status(401).json({ message: 'Invalid username or password' });
         return;
       }
