@@ -1,10 +1,11 @@
 import { Request, Response, Router } from 'express';
-import { dbGet, dbPatch } from '../database/dbRequests';
+import { dbGet } from '../models/dbGet';
+import { dbPatch } from '../models/dbPatch';
 import { Customer, Session } from "../utils/schemaTypes"
 
 const router = Router();
 
-router.patch('/checksession', async (req: Request, res: Response) => {
+router.patch('/check-session', async (req: Request, res: Response) => {
   try {
     const { customer_id, session_id } = req.body;
     const currentDate = new Date();

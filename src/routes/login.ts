@@ -1,5 +1,7 @@
 import { Request, Response, Router } from 'express';
-import { dbPost, dbGet, dbDelete } from '../database/dbRequests';
+import { dbGet } from '../models/dbGet';
+import { dbPost } from '../models/dbPost';
+import { dbDelete } from '../models/dbDelete';
 import { Customer, Session } from "../utils/schemaTypes";
 
 const router = Router();
