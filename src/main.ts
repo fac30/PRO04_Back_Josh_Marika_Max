@@ -1,5 +1,6 @@
 import express from 'express';
 import cors from 'cors';
+import session from 'express-session';
 import genericEndpoints from './routes/genericEndpoints';
 import register from './routes/register';
 import login from './routes/login';
@@ -15,6 +16,15 @@ const port = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(cors());
+
+app.use(
+  session({
+      secret: 'sEcReT1997-hAhAhA!!',
+      resave: false,
+      saveUninitialized: true,
+      cookie: { secure: false, httpOnly: true },
+  })
+);
 
 app.use(genericEndpoints);
 app.use(register);
