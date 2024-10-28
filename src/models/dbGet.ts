@@ -26,7 +26,6 @@ async function buildSelectQuery(table: string) {
 
 export async function dbGet(table: string, where?: WhereTuple) {
   try {
-    console.log(`Trying to run ${table}`)
     const selectQuery = await buildSelectQuery(table);
     console.log(selectQuery);
     const query = supabase
