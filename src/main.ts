@@ -15,7 +15,6 @@ const port = process.env.PORT || 3000;
 app.use(express.json());
 app.use(cors());
 
-// Use the routes
 app.use(genericEndpoints);
 app.use(register);
 app.use(login);
