@@ -8,6 +8,7 @@ import checkSession from './routes/checkSession';
 import vinyls from './routes/vinyls';
 import transactions from './routes/transactions';
 import shippingOptions from './routes/shippingOptions';
+import vinylsByCategory from './routes/vinylsByCategory';
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -21,6 +22,7 @@ app.use(login);
 app.use(logout);
 app.use(checkSession);
 app.use(vinyls);
+app.use(vinylsByCategory);
 app.use(transactions);
 app.use(shippingOptions);
 
