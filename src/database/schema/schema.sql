@@ -15,7 +15,7 @@ CREATE TABLE customers (
   date_of_birth TIMESTAMP,
   street_address VARCHAR NOT NULL,
   city VARCHAR NOT NULL,
-  location_id INTEGER REFERENCES locations(id) NOT NULL,
+  location_id INTEGER REFERENCES locations NOT NULL,
   created_at TIMESTAMP DEFAULT NOW()
 );
 
@@ -75,13 +75,13 @@ CREATE TABLE vinyls (
   title VARCHAR NOT NULL,
   release_date TIMESTAMP,
   limited_edition BOOLEAN DEFAULT false,
-  genre_id INTEGER REFERENCES genres(id) NOT NULL,
-  condition_id INTEGER REFERENCES conditions(id) NOT NULL,
-  price_range_id INTEGER REFERENCES price_ranges(id) NOT NULL,
-  collection_type_id INTEGER REFERENCES collection_types(id) NOT NULL,
+  genre_id INTEGER REFERENCES genres NOT NULL,
+  condition_id INTEGER REFERENCES conditions NOT NULL,
+  price_range_id INTEGER REFERENCES price_ranges NOT NULL,
+  collection_type_id INTEGER REFERENCES collection_types NOT NULL,
   new_release BOOLEAN NOT NULL,
-  time_period_id INTEGER REFERENCES time_periods(id) NOT NULL,
-  label_id INTEGER REFERENCES labels(id) NOT NULL,
+  time_period_id INTEGER REFERENCES time_periods NOT NULL,
+  label_id INTEGER REFERENCES labels NOT NULL,
   image_url VARCHAR,
   discount INTEGER DEFAULT 0,
   on_sale BOOLEAN NOT NULL DEFAULT false
@@ -94,11 +94,11 @@ CREATE TABLE formats (
 
 CREATE TABLE discs (
   id SERIAL PRIMARY KEY,
-  vinyl_id INTEGER REFERENCES vinyls(id),
+  vinyl_id INTEGER REFERENCES vinyls,
   image_url VARCHAR,
   side_a VARCHAR,
   side_b VARCHAR,
-  format_id INTEGER REFERENCES formats(id),
+  format_id INTEGER REFERENCES formats,
   duration INTEGER
 );
 
@@ -115,37 +115,35 @@ CREATE TABLE shipping_options (
 );
 
 CREATE TABLE shipping_locations (
-  id SERIAL PRIMARY KEY,
-  shipping_option_id INTEGER REFERENCES shipping_options(id) ON DELETE CASCADE,
-  location_id INTEGER REFERENCES locations(id) ON DELETE CASCADE,
-  UNIQUE (shipping_option_id, location_id)
+  shipping_option_id INTEGER REFERENCES shipping_options,
+  location_id INTEGER REFERENCES locations,
+  PRIMARY KEY (shipping_option_id, location_id)
 );
 
 CREATE TABLE transactions (
   id SERIAL PRIMARY KEY,
   date TIMESTAMP NOT NULL,
-  status_id INTEGER REFERENCES statuses(id),
+  status_id INTEGER REFERENCES statuses,
   delivery_date TIMESTAMP DEFAULT NOW() + INTERVAL '4 days',
   is_sell BOOLEAN NOT NULL DEFAULT true,
   transaction_number VARCHAR NOT NULL UNIQUE,
-  customer_id INTEGER REFERENCES customers(id),
+  customer_id INTEGER REFERENCES customers,
   created_at TIMESTAMP DEFAULT NOW(),
   tracking_number INTEGER,
-  shipping_option_id INTEGER REFERENCES shipping_options(id)
+  shipping_option_id INTEGER REFERENCES shipping_options
 );
 
 CREATE TABLE reviews (
   id SERIAL PRIMARY KEY,
   score INTEGER NOT NULL,
   description VARCHAR,
-  vinyl_id INTEGER REFERENCES vinyls(id),
+  vinyl_id INTEGER REFERENCES vinyls,
   created_at TIMESTAMP DEFAULT NOW(),
-  transaction_id INTEGER REFERENCES transactions(id)
+  transaction_id INTEGER REFERENCES transactions
 );
 
 CREATE TABLE transactions_vinyls (
-  id SERIAL PRIMARY KEY,
-  transaction_id INTEGER REFERENCES transactions(id) ON DELETE CASCADE,
-  vinyl_id INTEGER REFERENCES vinyls(id) ON DELETE CASCADE,
-  UNIQUE (transaction_id, vinyl_id)
+  transaction_id INTEGER REFERENCES transactions,
+  vinyl_id INTEGER REFERENCES vinyls,
+  PRIMARY KEY (transaction_id, vinyl_id)
 );
