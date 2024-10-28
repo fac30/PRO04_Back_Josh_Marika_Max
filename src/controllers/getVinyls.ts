@@ -1,66 +1,27 @@
-import { dbGet } from '../models/dbGet';
-import { Vinyl, Disc } from '../utils/schemaTypes';
+import { supabase } from "../database/supabaseClient";
 
-export const getVinyls = async (ids?: number[]) => {
+export async function getVinyls(id?: string) {
   try {
-    const vinyls: Vinyl[] = await dbGet<Vinyl>('vinyls', {
-      where: ids && ids.length > 0 ? { id: ids } : undefined,
-      join: [
-        {
-          relatedTable: 'genres',
-          foreignKey: 'genre_id',
-          columns: 'genre'
-        },
-        {
-          relatedTable: 'conditions',
-          foreignKey: 'condition_id',
-          columns: 'condition'
-        },
-        {
-          relatedTable: 'price_ranges',
-          foreignKey: 'price_range_id',
-          columns: 'price_range'
-        },
-        {
-          relatedTable: 'collection_types',
-          foreignKey: 'collection_type_id',
-          columns: 'collection_type'
-        },
-        {
-          relatedTable: 'time_periods',
-          foreignKey: 'time_period_id',
-          columns: 'time_period'
-        },
-        {
-          relatedTable: 'labels',
-          foreignKey: 'label_id',
-          columns: 'label'
-        }
-      ]
-    });
-
-    if (!vinyls || vinyls.length === 0) {
-      return vinyls;
+    let query = supabase
+      .from('vinyls')
+      .select(`
+        *,
+        genres (genre),
+        labels (label),
+        conditions (condition),
+        price_ranges (price_range),
+        time_periods (time_period),
+        collection_types (collection_type),
+        discs (*)
+      `);
+    if (id) {
+      query = query.eq('id', parseInt(id, 10));
     }
-
-    const vinylIds = vinyls.map(vinyl => vinyl.id);
-    console.log('Vinyl IDs to fetch discs for:', vinylIds);
-
-    const discs: Disc[] = await dbGet<Disc>('discs', {
-      where: { vinyl_id: vinylIds }
-    });
-
-    const vinylsWithDiscs = vinyls.map((vinyl: Vinyl) => {
-      const associatedDiscs = discs.filter(disc => disc.vinyl_id === vinyl.id);
-      return {
-        ...vinyl,
-        discs: associatedDiscs
-      };
-    });
-
-    return vinylsWithDiscs;
+    const { data, error } = await query;
+    if (error) throw error;
+    return data;
   } catch (error) {
     console.error('Error in getVinyls:', error);
-    throw new Error('Error fetching vinyls and discs data');
+    return { message: 'Error fetching vinyl data', error };
   }
 };
