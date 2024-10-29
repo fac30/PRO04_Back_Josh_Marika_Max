@@ -4,12 +4,6 @@ import { Customer } from "../utils/schemaTypes";
 
 const router = Router();
 
-declare module 'express-session' {
-  interface SessionData {
-      userId: string;
-  }
-}
-
 type LoginRequestBody = Pick<Customer, 'username' | 'password_hash'>;
 
 export default router.post('/login', async (req: Request<{}, {}, LoginRequestBody>, res: Response) => {
