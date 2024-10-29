@@ -9,9 +9,10 @@ import login from './routes/login';
 import logout from './routes/logout';
 import checkSession from './routes/checkSession';
 import vinyls from './routes/vinyls';
-import transactions from './routes/transactions';
-import shippingOptions from './routes/shippingOptions';
 import vinylsByCategory from './routes/vinylsByCategory';
+import transactions from './routes/transactions';
+import transactionsByStatus from './routes/transactionsByStatus';
+import shippingOptions from './routes/shippingOptions';
 
 dotenv.config();
 const app = express();
@@ -38,6 +39,7 @@ app.use(checkSession);
 app.use(vinyls);
 app.use(vinylsByCategory);
 app.use(transactions);
+app.use(transactionsByStatus);
 app.use(shippingOptions);
 
 app.listen(port, () => {
