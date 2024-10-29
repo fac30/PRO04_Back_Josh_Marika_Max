@@ -13,10 +13,10 @@ const categories = [
 ];
 
 categories.forEach(category => {
-    getCategory(category)
+    getCategory(category, false)
         .then((categoryData: Category[]) => {
             categoryData.forEach(categoryName => {
-                router.get(`/${category}/${categoryName[category]}`, async (req: Request, res: Response) => {
+                router.get(`/${category}/${typeof categoryName[category] === 'string'? categoryName[category].replace(" ", "-") : categoryName[category]}`, async (req: Request, res: Response) => {
                     console.log(`Querying ${category} of ${categoryName[category]}`);
                     try {
                         const vinyls = await getVinylsByCategory(categoryName, category);
