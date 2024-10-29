@@ -1,12 +1,15 @@
 import { Request, Response, Router } from 'express';
-import { dbGet, dbPost, dbPatch, dbDelete } from "../database/dbRequests";
+import { dbGet } from '../models/dbGet';
+import { dbPost } from '../models/dbPost';
+import { dbPatch } from '../models/dbPatch';
+import { dbDelete } from '../models/dbDelete';
 import endpoints from '../database/endpoints.json';
 
 const router = Router();
 
 Object.entries(endpoints).forEach(([endpoint, methods]) => {
   if (methods.GET) {
-    router.get(`/${endpoint}`, async (_req: Request, res: Response) => {
+    router.get(`/${endpoint}`, async (req: Request, res: Response) => {
       try {
         const data = await dbGet(endpoint);
         res.status(200).json(data);

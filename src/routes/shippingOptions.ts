@@ -1,12 +1,12 @@
 import { Router } from 'express';
-import { getVinyls } from '../controllers/getVinyls';
+import { getShippingOptions } from '../controllers/getShippingOptions';
 
 const router = Router();
 
-export default router.get('/vinyls/:id?', async (req, res) => {
+export default router.get('/shipping-options/:id?', async (req, res) => {
   try {
     const { id } = req.params;
-    const data = await getVinyls(id || undefined);
+    const data = await getShippingOptions(id || undefined);
     res.status(200).json(data);
   } catch (error) {
     res.status(500).json({ message: 'Error fetching vinyls data', error });
