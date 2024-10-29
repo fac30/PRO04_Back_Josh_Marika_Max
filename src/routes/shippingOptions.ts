@@ -1,52 +1,14 @@
-import { Request, Response, Router } from 'express';
-import { dbGet } from '../models/dbGet';
+import { Router } from 'express';
+import { getShippingOptions } from '../controllers/getShippingOptions';
 
 const router = Router();
 
-router.get('/shipping-options', async (req: Request, res: Response) => {
-    try {
-      const data = await dbGet('shipping_locations', {
-        join: [
-          {
-            relatedTable: 'shipping_options',
-            foreignKey: 'shipping_option_id',
-            columns: ['shipping_option', 'price', 'lead_time_days']
-          },
-          {
-            relatedTable: 'locations',
-            foreignKey: 'location_id',
-            columns: ['region', 'country']
-          }
-        ]
-      });
-
-      const transformedData = data.reduce((acc: any[], shippingLocation: any) => {
-        const location = {
-          region: shippingLocation.region,
-          country: shippingLocation.country
-        };
-
-        let existingOption = acc.find((opt: any) => opt.id === shippingLocation.shipping_option_id);
-
-        if (existingOption) {
-          existingOption.locations.push(location);
-        } else {
-          acc.push({
-            id: shippingLocation.shipping_option_id,
-            shipping_option: shippingLocation.shipping_option,
-            price: shippingLocation.price,
-            lead_time_days: shippingLocation.lead_time_days,
-            locations: [location]
-          });
-        }
-        return acc;
-      }, []);
-
-      res.status(200).json(transformedData);
-    } catch (error) {
-      console.error(error);
-      res.status(500).json({ message: `Error fetching shipping options data` });
-    }
+export default router.get('/shipping-options/:id?', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const data = await getShippingOptions(id || undefined);
+    res.status(200).json(data);
+  } catch (error) {
+    res.status(500).json({ message: 'Error fetching vinyls data', error });
+  }
 });
-
-export default router;
