@@ -2,7 +2,7 @@ import { Request, Response, Router } from 'express';
 
 const router = Router();
 
-router.delete('/logout', async (req: Request, res: Response) => {
+export default router.delete('/logout', async (req: Request, res: Response) => {
   if (req.session.userId) {
     req.session.destroy(err => {
       if (err) {
@@ -16,5 +16,3 @@ router.delete('/logout', async (req: Request, res: Response) => {
     res.status(400).json({ message: 'Not logged in' })
   }
 });
-
-export default router;
