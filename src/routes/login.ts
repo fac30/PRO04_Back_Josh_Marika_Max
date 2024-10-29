@@ -10,15 +10,20 @@ declare module 'express-session' {
   }
 }
 
-type LoginRequestBody = Pick<Customer, 'email' | 'password_hash'>;
+type LoginRequestBody = Pick<Customer, 'username' | 'password_hash'>;
 
 export default router.post('/login', async (req: Request<{}, {}, LoginRequestBody>, res: Response) => {
-    const { email, password_hash } = req.body;
-    const { data, error } = await supabase.auth.signInWithPassword({ email, password: password_hash });
-    if (data?.session) {
-        req.session.userId = data.user.id;
-        res.status(200).json({ message: 'Login successful' });
+    const { username, password_hash } = req.body;
+    const { data: customer, error } = await supabase
+        .from('customers')
+        .select('*, locations (region, country)')
+        .eq('username', username)
+        .eq('password_hash', password_hash)
+        .single();
+    if (error || !customer) {
+      res.status(400).json({ error: 'Invalid login credentials' });
     } else {
-      res.status(400).json({ error: error?.message || 'Login failed' });
+      req.session.userId = customer.id;
+      res.status(200).json({ message: 'Login successful', customer: { ...customer, password_hash: undefined } });
     }
 })
