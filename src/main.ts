@@ -3,6 +3,8 @@ import cors from 'cors';
 import session from 'express-session';
 import dotenv from "dotenv";
 
+import swaggerDocs from './swagger';
+
 import genericEndpoints from './routes/genericEndpoints';
 import register from './routes/register';
 import login from './routes/login';
@@ -31,6 +33,8 @@ app.use(
   })
 );
 
+swaggerDocs(app);
+
 app.use(genericEndpoints);
 app.use(register);
 app.use(login);
@@ -41,6 +45,7 @@ app.use(vinylsByCategory);
 app.use(transactions);
 app.use(transactionsByStatus);
 app.use(shippingOptions);
+
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);

@@ -6,6 +6,7 @@ export async function getTransactions(customer_id?: string, status_id?: number) 
       .from('transactions')
       .select(`
           *,
+          shipping_options ( * ),
           vinyls (
             *,
             genres (genre),
