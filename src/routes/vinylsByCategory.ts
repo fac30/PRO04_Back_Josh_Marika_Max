@@ -16,7 +16,7 @@ categories.forEach(category => {
     getCategory(category)
         .then((categoryData: Category[]) => {
             categoryData.forEach(categoryName => {
-                router.get(`/${category}/${categoryName[category]}`, async ( req: Request, res: Response) => {
+                router.get(`/${category}/${categoryName[category]}`, async (req: Request, res: Response) => {
                     console.log(`Querying ${category} of ${categoryName[category]}`);
                     try {
                         const vinyls = await getVinylsByCategory(categoryName, category);
