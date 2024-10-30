@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon --exec tsx src/main.ts",
     "seed": "tsx src/database/seed.ts",
-    "build": "tsc && vite build",
+    "build": "tsc",
     "preview": "vite preview",
     "prepare": "husky",
     "test": "jest"
