@@ -15,11 +15,15 @@
     "@commitlint/cli": "^19.5.0",
     "@commitlint/config-conventional": "^19.5.0",
     "@jest/globals": "^29.7.0",
+    "@types/bcryptjs": "^2.4.6",
     "@types/cors": "^2.8.17",
     "@types/express": "^5.0.0",
     "@types/express-session": "^1.18.0",
     "@types/jest": "^29.5.13",
     "@types/supertest": "^6.0.2",
+    "@types/swagger-jsdoc": "^6.0.4",
+    "@types/swagger-ui": "^3.52.4",
+    "@types/swagger-ui-express": "^4.1.7",
     "axios": "^1.7.7",
     "dotenv": "^16.4.5",
     "husky": "^9.1.6",
@@ -33,10 +37,13 @@
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.45.4",
+    "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.21.1",
     "express-session": "^1.18.1",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1",
     "ts-node": "^10.9.2"
   }
 }

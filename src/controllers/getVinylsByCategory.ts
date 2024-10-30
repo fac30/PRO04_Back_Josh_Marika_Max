@@ -5,10 +5,10 @@ export interface Category {
     [key: string]: string | number;
 }
 
-export async function getCategory(category: string): Promise<Category[]> {
+export async function getCategory(category: string, withE: boolean): Promise<Category[]> {
     try {
         const response = await supabase
-            .from(`${category}s`)
+            .from(withE? category + 'es' : category + 's')
             .select(`id, ${category}`);
         if (response.error || !response.data) {
             console.error(`Error fetching ${category} data:`, response.error);
