@@ -9,7 +9,7 @@ const router = Router();
 
 Object.entries(endpoints).forEach(([endpoint, methods]) => {
   if (methods.GET) {
-    router.get(`/${endpoint}`, async (req: Request, res: Response) => {
+    router.get(`/${endpoint}`, async (_req: Request, res: Response) => {
       try {
         const data = await dbGet(endpoint);
         res.status(200).json(data);
