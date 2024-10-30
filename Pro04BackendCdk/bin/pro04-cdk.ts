@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import 'source-map-support/register';
 import * as cdk from 'aws-cdk-lib';
-import { Pro04CdkStack } from '../lib/pro04-cdk-stack';
+import { Pro04CdkStack } from '../lib/Pro04BackendCdkStack';
 
 const app = new cdk.App();
 new Pro04CdkStack(app, 'Pro04CdkStack', {
