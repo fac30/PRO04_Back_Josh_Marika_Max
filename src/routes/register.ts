@@ -13,20 +13,49 @@ const registerHandler = async (req: Request, res: Response) => {
     return;
   }
 
-  const password_hash = await bcrypt.hash(password, 10);
-  const customerData = { ...rest, password_hash };
+  try {
+    const password_hash = await bcrypt.hash(password, 10);
+    const customerData = { ...rest, password_hash };
 
-  const { data, error } = await supabase
-    .from("customers")
-    .insert([customerData])
-    .select("*");
-  if (error) {
-    res.status(400).json({ message: "Registration failed", error });
-  } else if (data && data.length > 0) {
-    const { password_hash, ...customer } = data[0];
+    const { data: insertData, error: insertError } = await supabase
+      .from("customers")
+      .insert([customerData])
+      .select("*");
+
+    if (insertError) {
+      res
+        .status(400)
+        .json({ message: "Registration failed", error: insertError.message });
+      return;
+    }
+
+    if (!insertData || insertData.length === 0) {
+      res
+        .status(500)
+        .json({ message: "No customer data returned after registration" });
+      return;
+    }
+
+    const { data: customer, error: customerError } = await supabase
+      .from("customers")
+      .select("*, locations (region, country)")
+      .eq("username", customerData.username)
+      .single();
+
+    if (customerError) {
+      res.status(500).json({
+        message: "Failed to retrieve customer data after registration",
+        error: customerError.message,
+      });
+      return;
+    }
+
     res.status(201).json({ message: "Signup successful", customer });
-  } else {
-    res.status(500).json({ message: "Unexpected error occurred" });
+  } catch (error) {
+    res.status(500).json({
+      message: "An unexpected error occurred",
+      error: (error as Error).message,
+    });
   }
 };
 
