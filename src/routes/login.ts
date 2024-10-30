@@ -13,7 +13,7 @@ export default router.post(
 
     const { data: customer, error } = await supabase
       .from("customers")
-      .select("id, password_hash, username, locations (region, country)")
+      .select("*, locations (region, country)")
       .eq("username", username)
       .single();
 
@@ -32,11 +32,9 @@ export default router.post(
     }
 
     req.session.userId = customer.id;
-    res
-      .status(200)
-      .json({
-        message: "Login successful",
-        customer: { ...customer, password_hash: undefined },
-      });
+    res.status(200).json({
+      message: "Login successful",
+      customer: { ...customer, password_hash: undefined },
+    });
   }
 );
