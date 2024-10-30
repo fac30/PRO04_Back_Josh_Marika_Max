@@ -1,10 +1,11 @@
 #!/usr/bin/env node
 import 'source-map-support/register';
 import * as cdk from 'aws-cdk-lib';
-import { Pro04CdkStack } from '../lib/Pro04BackendCdkStack';
+import { Pro04BackendCdkStack } from '../lib/Pro04BackendCdkStack';
+
 
 const app = new cdk.App();
-new Pro04CdkStack(app, 'Pro04CdkStack', {
+new Pro04BackendCdkStack(app, 'Pro04CdkStack', {
   /* If you don't specify 'env', this stack will be environment-agnostic.
    * Account/Region-dependent features and context lookups will not work,
    * but a single synthesized template can be deployed anywhere. */
