@@ -18,7 +18,9 @@ export default router.post(
       .single();
 
     if (error || !customer) {
-      res.status(400).json({ error: "Invalid login credentials" });
+      res
+        .status(400)
+        .json({ error: "Invalid login credentials", isLoggedIn: false });
       return;
     }
 
@@ -27,13 +29,16 @@ export default router.post(
       customer.password_hash
     );
     if (!passwordMatch) {
-      res.status(400).json({ error: "Invalid login credentials" });
+      res
+        .status(400)
+        .json({ error: "Invalid login credentials", isLoggedIn: false });
       return;
     }
 
     req.session.userId = customer.id;
     res.status(200).json({
       message: "Login successful",
+      isLoggedIn: true,
       customer: { ...customer, password_hash: undefined },
     });
   }

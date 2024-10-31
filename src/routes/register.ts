@@ -9,7 +9,9 @@ const registerHandler = async (req: Request, res: Response) => {
   const { password, ...rest } = req.body as Partial<Customer>;
 
   if (!password) {
-    res.status(400).json({ message: "Password is required" });
+    res
+      .status(400)
+      .json({ message: "Password is required", isLoggedIn: false });
     return;
   }
 
@@ -23,16 +25,19 @@ const registerHandler = async (req: Request, res: Response) => {
       .select("*");
 
     if (insertError) {
-      res
-        .status(400)
-        .json({ message: "Registration failed", error: insertError.message });
+      res.status(400).json({
+        message: "Registration failed",
+        error: insertError.message,
+        isLoggedIn: false,
+      });
       return;
     }
 
     if (!insertData || insertData.length === 0) {
-      res
-        .status(500)
-        .json({ message: "No customer data returned after registration" });
+      res.status(500).json({
+        message: "No customer data returned after registration",
+        isLoggedIn: false,
+      });
       return;
     }
 
@@ -46,15 +51,19 @@ const registerHandler = async (req: Request, res: Response) => {
       res.status(500).json({
         message: "Failed to retrieve customer data after registration",
         error: customerError.message,
+        isLoggedIn: false,
       });
       return;
     }
 
-    res.status(201).json({ message: "Signup successful", customer });
+    res
+      .status(201)
+      .json({ message: "Signup successful", customer, isLoggedIn: true });
   } catch (error) {
     res.status(500).json({
       message: "An unexpected error occurred",
       error: (error as Error).message,
+      isLoggedIn: false,
     });
   }
 };
