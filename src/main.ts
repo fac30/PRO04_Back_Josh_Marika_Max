@@ -23,21 +23,14 @@ const sessionSecret = process.env.SESSION_SECRET;
 
 app.use(express.json());
 
-const allowedOrigins = [
+/*const allowedOrigins = [
   "https://localhost:5173",
   "https://localhost:5174",
   "http://pro04cdkstack-sitebucket397a1860-yjssa5llco8j.s3-website.eu-west-2.amazonaws.com",
-];
+];*/
 
 app.use(
   cors({
-    origin: (origin: string | undefined, callback) => {
-      if (!origin || allowedOrigins.includes(origin)) {
-        callback(null, true);
-      } else {
-        callback(new Error("Not allowed by CORS"));
-      }
-    },
     credentials: true,
   })
 );
