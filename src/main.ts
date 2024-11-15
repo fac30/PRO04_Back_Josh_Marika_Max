@@ -27,6 +27,7 @@ const allowedOrigins = [
   "http://localhost:5173",
   "http://localhost:5174",
   "http://pro04cdkstack-sitebucket397a1860-yjssa5llco8j.s3-website.eu-west-2.amazonaws.com",
+  "http://fonthillrecords.s3-website.eu-west-2.amazonaws.com",
 ];
 
 app.use(
