@@ -21,178 +21,178 @@ INSERT INTO vinyls (
     (50, 'A classic jazz album by Miles Davis', 20.99, 'Miles Davis', 'Kind of Blue', '1959-08-17', false, 2, 1, 3, 1, 'https://i.scdn.co/image/ab67616d0000b2737ab89c25093ea3787b1995b4', 0, false),
 
     -- 25
-    (50, 'A modern pop album by Adele', 19.99, 'Adele', '25', '2015-11-20', false, 3, 1, 3, 1, 'https://m.media-amazon.com/images/I/71VcJXBDgEL._UF1000,1000_QL80_.jpg', 20, true),
+    (50, 'A modern pop album by Adele', 19.99, 'Adele', '25', '2015-11-20', false, 14, 1, 3, 1, 'https://m.media-amazon.com/images/I/71VcJXBDgEL._UF1000,1000_QL80_.jpg', 20, true),
 
     -- Born to Run
-    (50, 'A legendary rock album by Bruce Springsteen', 22.99, 'Bruce Springsteen', 'Born to Run', '1975-08-25', false, 1, 1, 3, 1, 'https://i.scdn.co/image/ab67616d0000b273503143a281a3f30268dcd9f9', 0, false),
+    (50, 'A legendary rock album by Bruce Springsteen', 22.99, 'Bruce Springsteen', 'Born to Run', '1975-08-25', false, 6, 1, 3, 1, 'https://i.scdn.co/image/ab67616d0000b273503143a281a3f30268dcd9f9', 0, false),
 
     -- Highway 61 Revisited
-    (50, 'A classic rock album by Bob Dylan', 23.99, 'Bob Dylan', 'Highway 61 Revisited', '1965-08-30', false, 1, 1, 3, 1, 'https://i.scdn.co/image/ab67616d0000b27341720ef0ae31e10d39e43ca2', 10, true),
+    (50, 'A classic rock album by Bob Dylan', 23.99, 'Bob Dylan', 'Highway 61 Revisited', '1965-08-30', false, 6, 1, 3, 1, 'https://i.scdn.co/image/ab67616d0000b27341720ef0ae31e10d39e43ca2', 10, true),
 
     -- The Rise and Fall of Ziggy Stardust
-    (50, 'A groundbreaking album by David Bowie', 21.99, 'David Bowie', 'The Rise and Fall of Ziggy Stardust', '1972-06-16', false, 1, 1, 3, 2, 'https://i.scdn.co/image/ab67616d0000b273c41f4e1133b0e6c5fcf58680', 0, false),
+    (50, 'A groundbreaking album by David Bowie', 21.99, 'David Bowie', 'The Rise and Fall of Ziggy Stardust', '1972-06-16', false, 9, 1, 3, 2, 'https://i.scdn.co/image/ab67616d0000b273c41f4e1133b0e6c5fcf58680', 0, false),
 
     -- Elvis Presley
-    (50, 'A classic album by Elvis Presley', 24.99, 'Elvis Presley', 'Elvis Presley', '1956-03-23', false, 3, 1, 3, 2, 'https://i.scdn.co/image/ab67616d0000b273b6cb10f041544fa1625f31f7', 0, false),
+    (50, 'A classic album by Elvis Presley', 24.99, 'Elvis Presley', 'Elvis Presley', '1956-03-23', false, 18, 1, 3, 2, 'https://i.scdn.co/image/ab67616d0000b273b6cb10f041544fa1625f31f7', 0, false),
 
     -- The Man-Machine
-    (50, 'An iconic electronic album by Kraftwerk', 18.99, 'Kraftwerk', 'The Man-Machine', '1978-05-19', false, 4, 1, 3, 2, 'https://i.scdn.co/image/ab67616d0000b273e4c3295cd6464ed5bc0f6c2c', 0, false),
+    (50, 'An iconic electronic album by Kraftwerk', 18.99, 'Kraftwerk', 'The Man-Machine', '1978-05-19', false, 5, 1, 3, 2, 'https://i.scdn.co/image/ab67616d0000b273e4c3295cd6464ed5bc0f6c2c', 0, false),
 
     -- Wasting Light
-    (50, 'A modern rock album by Foo Fighters', 22.99, 'Foo Fighters', 'Wasting Light', '2011-04-12', false, 1, 1, 3, 2, 'https://i.scdn.co/image/ab67616d0000b273cdac19bbaee5cc123edcc26f', 30, true),
+    (50, 'A modern rock album by Foo Fighters', 22.99, 'Foo Fighters', 'Wasting Light', '2011-04-12', false, 18, 1, 3, 2, 'https://i.scdn.co/image/ab67616d0000b273cdac19bbaee5cc123edcc26f', 30, true),
 
     -- Because the Internet
     (50, 'A popular hip-hop album by Childish Gambino', 21.99, 'Childish Gambino', 'Because the Internet', '2013-12-10', false, 5, 1, 3, 2, 'https://i.scdn.co/image/ab67616d0000b27326d64b6150aa3d9b6b67d857', 0, false),
 
     -- The Essential Pavarotti
-    (50, 'A collection of Luciano Pavarotti''s best', 24.99, 'Luciano Pavarotti', 'The Essential Pavarotti', '1990-10-31', false, 6, 1, 3, 3, 'https://i.scdn.co/image/ab67616d0000b273289f4dc7e7f51d324d07d50b', 25, true),
+    (50, 'A collection of Luciano Pavarotti''s best', 24.99, 'Luciano Pavarotti', 'The Essential Pavarotti', '1990-10-31', false, 3, 1, 3, 3, 'https://i.scdn.co/image/ab67616d0000b273289f4dc7e7f51d324d07d50b', 25, true),
 
     -- Let It Bleed
     (50, 'A classic album by The Rolling Stones', 23.99, 'The Rolling Stones', 'Let It Bleed', '1969-12-05', false, 1, 1, 3, 3, 'https://i.scdn.co/image/ab67616d0000b2732af30c881bb23cfb82a8cf99', 0, false),
 
     -- It''s Not Unusual
-    (50, 'A pop album by Tom Jones', 20.99, 'Tom Jones', 'It''s Not Unusual', '1965-01-01', false, 3, 1, 3, 3, 'https://i.scdn.co/image/ab67616d0000b273cfe16d3b440dffb1220328f7', 10, true),
+    (50, 'A pop album by Tom Jones', 20.99, 'Tom Jones', 'It''s Not Unusual', '1965-01-01', false, 14, 1, 3, 3, 'https://i.scdn.co/image/ab67616d0000b273cfe16d3b440dffb1220328f7', 10, true),
 
     -- Hello, Dolly!
-    (50, 'A classic jazz album by Louis Armstrong', 19.99, 'Louis Armstrong', 'Hello, Dolly!', '1964-01-01', false, 2, 1, 3, 3, 'https://i.scdn.co/image/ab67616d0000b273ff47cd27d409588ecc01d81f', 0, false),
+    (50, 'A classic jazz album by Louis Armstrong', 19.99, 'Louis Armstrong', 'Hello, Dolly!', '1964-01-01', false, 10, 1, 3, 3, 'https://i.scdn.co/image/ab67616d0000b273ff47cd27d409588ecc01d81f', 0, false),
 
     -- Blues Breakers with Eric Clapton
-    (50, 'A blues album by John Mayall', 24.99, 'John Mayall', 'Blues Breakers with Eric Clapton', '1966-07-22', false, 7, 1, 3, 3, 'https://i.scdn.co/image/ab67616d0000b273c40ff56a16cebb8f30af1f66', 0, false),
+    (50, 'A blues album by John Mayall', 24.99, 'John Mayall', 'Blues Breakers with Eric Clapton', '1966-07-22', false, 2, 1, 3, 3, 'https://i.scdn.co/image/ab67616d0000b273c40ff56a16cebb8f30af1f66', 0, false),
 
     -- Abbey Road
-    (50, 'A legendary album by The Beatles', 27.99, 'The Beatles', 'Abbey Road', '1969-09-26', false, 1, 1, 3, 4, 'https://i.scdn.co/image/ab67616d0000b273dc30583ba717007b00cceb25', 15, true),
+    (50, 'A legendary album by The Beatles', 27.99, 'The Beatles', 'Abbey Road', '1969-09-26', false, 18, 1, 3, 4, 'https://i.scdn.co/image/ab67616d0000b273dc30583ba717007b00cceb25', 15, true),
 
     -- Discovery
-    (50, 'An iconic electronic album by Daft Punk', 21.99, 'Daft Punk', 'Discovery', '2001-02-26', false, 4, 1, 3, 4, 'https://i.scdn.co/image/ab67616d0000b2736610c21366e613bfd9f5d197', 0, false),
+    (50, 'An iconic electronic album by Daft Punk', 21.99, 'Daft Punk', 'Discovery', '2001-02-26', false, 5, 1, 3, 4, 'https://i.scdn.co/image/ab67616d0000b2736610c21366e613bfd9f5d197', 0, false),
 
     -- OK Computer
     (50, 'A groundbreaking alternative album by Radiohead', 25.99, 'Radiohead', 'OK Computer', '1997-05-21', false, 1, 1, 3, 4, 'https://i.scdn.co/image/ab67616d0000b273c8b444df094279e70d0ed856', 10, true),
 
     -- Teenage Dream
-    (50, 'A popular album by Katy Perry', 19.99, 'Katy Perry', 'Teenage Dream', '2010-08-24', false, 3, 1, 3, 4, 'https://i.scdn.co/image/ab67616d0000b273d20c38f295039520d688a888', 0, false),
+    (50, 'A popular album by Katy Perry', 19.99, 'Katy Perry', 'Teenage Dream', '2010-08-24', false, 14, 1, 3, 4, 'https://i.scdn.co/image/ab67616d0000b273d20c38f295039520d688a888', 0, false),
 
     -- The Number of the Beast
-    (50, 'A classic metal album by Iron Maiden', 26.99, 'Iron Maiden', 'The Number of the Beast', '1982-03-22', false, 8, 1, 3, 4, 'https://i.scdn.co/image/ab67616d0000b2730910e39b1092e8ec44626aa3', 20, true),
+    (50, 'A classic metal album by Iron Maiden', 26.99, 'Iron Maiden', 'The Number of the Beast', '1982-03-22', false, 13, 1, 3, 4, 'https://i.scdn.co/image/ab67616d0000b2730910e39b1092e8ec44626aa3', 20, true),
 
     -- Blue Train
-    (50, 'A legendary jazz album by John Coltrane', 22.99, 'John Coltrane', 'Blue Train', '1958-01-01', false, 2, 1, 3, 5, 'https://i.scdn.co/image/ab67616d0000b273611ea3fb281f7956ffd33b77', 0, false),
+    (50, 'A legendary jazz album by John Coltrane', 22.99, 'John Coltrane', 'Blue Train', '1958-01-01', false, 10, 1, 3, 5, 'https://i.scdn.co/image/ab67616d0000b273611ea3fb281f7956ffd33b77', 0, false),
 
     -- Maiden Voyage
-    (50, 'A classic jazz album by Herbie Hancock', 23.99, 'Herbie Hancock', 'Maiden Voyage', '1965-05-17', false, 2, 1, 3, 5, 'https://i.scdn.co/image/ab67616d0000b27344e77f19a8f35955870d4907', 15, true),
+    (50, 'A classic jazz album by Herbie Hancock', 23.99, 'Herbie Hancock', 'Maiden Voyage', '1965-05-17', false, 10, 1, 3, 5, 'https://i.scdn.co/image/ab67616d0000b27344e77f19a8f35955870d4907', 15, true),
 
     -- Moanin'
-    (50, 'A classic jazz album by Art Blakey', 20.99, 'Art Blakey', 'Moanin''', '1959-01-01', false, 2, 1, 3, 5, 'https://i.scdn.co/image/ab67616d0000b273c653150f8ed1f6a12348ba79', 0, false),
+    (50, 'A classic jazz album by Art Blakey', 20.99, 'Art Blakey', 'Moanin''', '1959-01-01', false, 10, 1, 3, 5, 'https://i.scdn.co/image/ab67616d0000b273c653150f8ed1f6a12348ba79', 0, false),
 
     -- Genius of Modern Music: Volume 1
-    (50, 'A legendary album by Thelonious Monk', 21.99, 'Thelonious Monk', 'Genius of Modern Music: Volume 1', '1947-01-01', false, 2, 1, 3, 5, 'https://i.scdn.co/image/ab67616d0000b273c4c99d6b212f741ba28c5a61', 0, false),
+    (50, 'A legendary album by Thelonious Monk', 21.99, 'Thelonious Monk', 'Genius of Modern Music: Volume 1', '1947-01-01', false, 16, 1, 3, 5, 'https://i.scdn.co/image/ab67616d0000b273c4c99d6b212f741ba28c5a61', 0, false),
 
     -- Song for My Father
-    (50, 'A jazz classic by Horace Silver', 19.99, 'Horace Silver', 'Song for My Father', '1965-01-01', false, 2, 1, 3, 5, 'https://i.scdn.co/image/ab67616d0000b2739453839d1e3569bdebc9ffab', 20, true),
+    (50, 'A jazz classic by Horace Silver', 19.99, 'Horace Silver', 'Song for My Father', '1965-01-01', false, 16, 1, 3, 5, 'https://i.scdn.co/image/ab67616d0000b2739453839d1e3569bdebc9ffab', 20, true),
 
     -- Who's Next
-    (50, 'A legendary rock album by The Who', 25.99, 'The Who', 'Who''s Next', '1971-08-14', false, 1, 1, 3, 6, 'https://i.scdn.co/image/ab67616d0000b273d993d0cd47c0b948d36553c8', 0, false),
+    (50, 'A legendary rock album by The Who', 25.99, 'The Who', 'Who''s Next', '1971-08-14', false, 18, 1, 3, 6, 'https://i.scdn.co/image/ab67616d0000b273d993d0cd47c0b948d36553c8', 0, false),
 
     -- Arrival
-    (50, 'A pop album by ABBA', 18.99, 'ABBA', 'Arrival', '1976-10-11', false, 3, 1, 3, 6, 'https://i.scdn.co/image/ab67616d0000b27300a86f72f75086f7fb441899', 10, true),
+    (50, 'A pop album by ABBA', 18.99, 'ABBA', 'Arrival', '1976-10-11', false, 14, 1, 3, 6, 'https://i.scdn.co/image/ab67616d0000b27300a86f72f75086f7fb441899', 10, true),
 
     -- Technique
-    (50, 'An electronic album by New Order', 19.99, 'New Order', 'Technique', '1989-01-30', false, 4, 1, 3, 6, 'https://i.scdn.co/image/ab67616d0000b2735ac2c6a71a5882025e438424', 0, false),
+    (50, 'An electronic album by New Order', 19.99, 'New Order', 'Technique', '1989-01-30', false, 5, 1, 3, 6, 'https://i.scdn.co/image/ab67616d0000b2735ac2c6a71a5882025e438424', 0, false),
 
     -- Disraeli Gears
-    (50, 'A rock classic by Cream', 20.99, 'Cream', 'Disraeli Gears', '1967-11-02', false, 1, 1, 3, 6, 'https://i.scdn.co/image/ab67616d0000b273db1fb2dede292908e86d94d7', 0, false),
+    (50, 'A rock classic by Cream', 20.99, 'Cream', 'Disraeli Gears', '1967-11-02', false, 18, 1, 3, 6, 'https://i.scdn.co/image/ab67616d0000b273db1fb2dede292908e86d94d7', 0, false),
 
     -- The Fame
-    (50, 'A pop album by Lady Gaga', 24.99, 'Lady Gaga', 'The Fame', '2008-08-19', false, 3, 1, 3, 6, 'https://i.scdn.co/image/ab67616d0000b273613aaa3ae566d9f36008aed0', 0, false),
+    (50, 'A pop album by Lady Gaga', 24.99, 'Lady Gaga', 'The Fame', '2008-08-19', false, 14, 1, 3, 6, 'https://i.scdn.co/image/ab67616d0000b273613aaa3ae566d9f36008aed0', 0, false),
 
     -- Crazy Blues
-    (50, 'A blues album by Mamie Smith', 17.99, 'Mamie Smith', 'Crazy Blues', '1920-08-10', false, 7, 1, 3, 7, 'https://i.scdn.co/image/ab67616d0000b273a0a0111739741dc48f57bd82', 30, true),
+    (50, 'A blues album by Mamie Smith', 17.99, 'Mamie Smith', 'Crazy Blues', '1920-08-10', false, 2, 1, 3, 7, 'https://i.scdn.co/image/ab67616d0000b273a0a0111739741dc48f57bd82', 30, true),
 
     -- West End Blues
-    (50, 'A classic jazz album by Louis Armstrong', 21.99, 'Louis Armstrong', 'West End Blues', '1928-06-28', false, 2, 1, 3, 7, 'https://i.scdn.co/image/ab67616d0000b2733c1f30436ab89be9dd55bc43', 0, false),
+    (50, 'A classic jazz album by Louis Armstrong', 21.99, 'Louis Armstrong', 'West End Blues', '1928-06-28', false, 10, 1, 3, 7, 'https://i.scdn.co/image/ab67616d0000b2733c1f30436ab89be9dd55bc43', 0, false),
 
     -- Black Snake Moan
-    (50, 'A blues album by Blind Lemon Jefferson', 18.99, 'Blind Lemon Jefferson', 'Black Snake Moan', '1926-01-01', false, 7, 1, 3, 7, 'https://i.scdn.co/image/ab67616d0000b273784e255a3beab1cc84d3d56e', 0, false),
+    (50, 'A blues album by Blind Lemon Jefferson', 18.99, 'Blind Lemon Jefferson', 'Black Snake Moan', '1926-01-01', false, 2, 1, 3, 7, 'https://i.scdn.co/image/ab67616d0000b273784e255a3beab1cc84d3d56e', 0, false),
 
     -- Downhearted Blues
-    (50, 'A blues album by Bessie Smith', 16.99, 'Bessie Smith', 'Downhearted Blues', '1923-02-16', false, 7, 1, 3, 7, 'https://i.scdn.co/image/ab67616d0000b2735e15b3819f2050cd720975ff', 0, false),
+    (50, 'A blues album by Bessie Smith', 16.99, 'Bessie Smith', 'Downhearted Blues', '1923-02-16', false, 2, 1, 3, 7, 'https://i.scdn.co/image/ab67616d0000b2735e15b3819f2050cd720975ff', 0, false),
 
     -- The Mooche
-    (50, 'A jazz album by Duke Ellington', 20.99, 'Duke Ellington', 'The Mooche', '1928-10-01', false, 2, 1, 3, 7, 'https://i.scdn.co/image/ab67616d0000b27386cc9d6681c1bfab58d10856', 0, false),
+    (50, 'A jazz album by Duke Ellington', 20.99, 'Duke Ellington', 'The Mooche', '1928-10-01', false, 10, 1, 3, 7, 'https://i.scdn.co/image/ab67616d0000b27386cc9d6681c1bfab58d10856', 0, false),
 
     -- Sing, Sing, Sing
-    (50, 'A jazz album by Benny Goodman', 19.99, 'Benny Goodman', 'Sing, Sing, Sing', '1937-07-06', false, 2, 1, 3, 8, 'https://i.scdn.co/image/ab67616d0000b273f5776ac73cc0befaa3f32ce0', 25, true),
+    (50, 'A jazz album by Benny Goodman', 19.99, 'Benny Goodman', 'Sing, Sing, Sing', '1937-07-06', false, 10, 1, 3, 8, 'https://i.scdn.co/image/ab67616d0000b273f5776ac73cc0befaa3f32ce0', 25, true),
 
     -- Minnie the Moocher
-    (50, 'A jazz album by Cab Calloway', 20.99, 'Cab Calloway', 'Minnie the Moocher', '1931-03-03', false, 2, 1, 3, 8, 'https://i.scdn.co/image/ab67616d0000b27313e8308b63ffbb082e85bb01', 0, false),
+    (50, 'A jazz album by Cab Calloway', 20.99, 'Cab Calloway', 'Minnie the Moocher', '1931-03-03', false, 19, 1, 3, 8, 'https://i.scdn.co/image/ab67616d0000b27313e8308b63ffbb082e85bb01', 0, false),
 
     -- One O''Clock Jump
-    (50, 'A jazz album by Count Basie', 21.99, 'Count Basie', 'One O''Clock Jump', '1937-07-07', false, 2, 1, 3, 8, 'https://i.scdn.co/image/ab67616d0000b2739f9f4fa2b478764e97ac15f4', 0, false),
+    (50, 'A jazz album by Count Basie', 21.99, 'Count Basie', 'One O''Clock Jump', '1937-07-07', false, 19, 1, 3, 8, 'https://i.scdn.co/image/ab67616d0000b2739f9f4fa2b478764e97ac15f4', 0, false),
 
     -- Strange Fruit
-    (50, 'A jazz album by Billie Holiday', 22.99, 'Billie Holiday', 'Strange Fruit', '1939-04-20', false, 2, 1, 3, 8, 'https://i.scdn.co/image/ab67616d0000b27342eaf8e2d503d28e99ad03a1', 10, true),
+    (50, 'A jazz album by Billie Holiday', 22.99, 'Billie Holiday', 'Strange Fruit', '1939-04-20', false, 19, 1, 3, 8, 'https://i.scdn.co/image/ab67616d0000b27342eaf8e2d503d28e99ad03a1', 10, true),
 
     -- In the Mood
-    (50, 'A jazz album by Glenn Miller', 18.99, 'Glenn Miller', 'In the Mood', '1939-09-15', false, 2, 1, 3, 8, 'https://i.scdn.co/image/ab67616d0000b273bbb26699bc7cb61bf07a57fd', 0, false),
+    (50, 'A jazz album by Glenn Miller', 18.99, 'Glenn Miller', 'In the Mood', '1939-09-15', false, 10, 1, 3, 8, 'https://i.scdn.co/image/ab67616d0000b273bbb26699bc7cb61bf07a57fd', 0, false),
 
     -- Pet Sounds
-    (50, 'A legendary rock album by The Beach Boys', 26.99, 'The Beach Boys', 'Pet Sounds', '1966-05-16', false, 1, 1, 3, 9, 'https://i.scdn.co/image/ab67616d0000b27350eb0c521d2d3b2f599bff04', 0, false),
+    (50, 'A legendary rock album by The Beach Boys', 26.99, 'The Beach Boys', 'Pet Sounds', '1966-05-16', false, 18, 1, 3, 9, 'https://i.scdn.co/image/ab67616d0000b27350eb0c521d2d3b2f599bff04', 0, false),
 
     -- Come Fly with Me
-    (50, 'A pop classic by Frank Sinatra', 22.99, 'Frank Sinatra', 'Come Fly with Me', '1958-01-06', false, 3, 1, 3, 9, 'https://i.scdn.co/image/ab67616d0000b273068a5559744d17bd5e871740', 0, false),
+    (50, 'A pop classic by Frank Sinatra', 22.99, 'Frank Sinatra', 'Come Fly with Me', '1958-01-06', false, 14, 1, 3, 9, 'https://i.scdn.co/image/ab67616d0000b273068a5559744d17bd5e871740', 0, false),
 
     -- Californication
-    (50, 'A rock album by Red Hot Chili Peppers', 27.99, 'Red Hot Chili Peppers', 'Californication', '1999-06-08', false, 1, 1, 3, 9, 'https://i.scdn.co/image/ab67616d0000b273a9249ebb15ca7a5b75f16a90', 30, true),
+    (50, 'A rock album by Red Hot Chili Peppers', 27.99, 'Red Hot Chili Peppers', 'Californication', '1999-06-08', false, 18, 1, 3, 9, 'https://i.scdn.co/image/ab67616d0000b273a9249ebb15ca7a5b75f16a90', 30, true),
 
     -- Licensed to Ill
-    (50, 'A hip hop album by Beastie Boys', 23.99, 'Beastie Boys', 'Licensed to Ill', '1986-11-15', false, 5, 1, 3, 9, 'https://i.scdn.co/image/ab67616d0000b273a7ea08ab3914c5fb2084a8ac', 0, false),
+    (50, 'A hip hop album by Beastie Boys', 23.99, 'Beastie Boys', 'Licensed to Ill', '1986-11-15', false, 8, 1, 3, 9, 'https://i.scdn.co/image/ab67616d0000b273a7ea08ab3914c5fb2084a8ac', 0, false),
 
     -- No Fences
-    (50, 'A country album by Garth Brooks', 22.99, 'Garth Brooks', 'No Fences', '1990-08-27', false, 6, 1, 3, 9, 'https://i.scdn.co/image/ab67616d0000b2730a82ac9e1a8e509dd3d9252f', 0, false),
+    (50, 'A country album by Garth Brooks', 22.99, 'Garth Brooks', 'No Fences', '1990-08-27', false, 4, 1, 3, 9, 'https://i.scdn.co/image/ab67616d0000b2730a82ac9e1a8e509dd3d9252f', 0, false),
 
     -- 1989
-    (50, 'A pop album by Taylor Swift', 24.99, 'Taylor Swift', '1989', '2014-10-27', false, 3, 1, 3, 10, 'https://i.scdn.co/image/ab67616d0000b273dc2bacae1dca83d26e2b1949', 10, true),
+    (50, 'A pop album by Taylor Swift', 24.99, 'Taylor Swift', '1989', '2014-10-27', false, 14, 1, 3, 10, 'https://i.scdn.co/image/ab67616d0000b273dc2bacae1dca83d26e2b1949', 10, true),
 
     -- After Hours
-    (50, 'A modern R&B album by The Weeknd', 22.99, 'The Weeknd', 'After Hours', '2020-03-20', false, 5, 1, 3, 10, 'https://i.scdn.co/image/ab67616d0000b2738863bc11d2aa12b54f5aeb36', 0, false),
+    (50, 'A modern R&B album by The Weeknd', 22.99, 'The Weeknd', 'After Hours', '2020-03-20', false, 16, 1, 3, 10, 'https://i.scdn.co/image/ab67616d0000b2738863bc11d2aa12b54f5aeb36', 0, false),
 
     -- The Joshua Tree
-    (50, 'A rock album by U2', 23.99, 'U2', 'The Joshua Tree', '1987-03-09', false, 1, 1, 3, 10, 'https://i.scdn.co/image/ab67616d0000b273f8996a3f97e80d9d700635c3', 0, false),
+    (50, 'A rock album by U2', 23.99, 'U2', 'The Joshua Tree', '1987-03-09', false, 14, 1, 3, 10, 'https://i.scdn.co/image/ab67616d0000b273f8996a3f97e80d9d700635c3', 0, false),
 
     -- DAMN.
-    (50, 'A hip hop album by Kendrick Lamar', 23.99, 'Kendrick Lamar', 'DAMN.', '2017-04-14', false, 5, 1, 3, 10, 'https://i.scdn.co/image/ab67616d0000b2738b52c6b9bc4e43d873869699', 0, false),
+    (50, 'A hip hop album by Kendrick Lamar', 23.99, 'Kendrick Lamar', 'DAMN.', '2017-04-14', false, 8, 1, 3, 10, 'https://i.scdn.co/image/ab67616d0000b2738b52c6b9bc4e43d873869699', 0, false),
 
     -- Chromatica
-    (50, 'A pop album by Lady Gaga', 23.99, 'Lady Gaga', 'Chromatica', '2020-05-29', false, 3, 1, 3, 10, 'https://i.scdn.co/image/ab67616d0000b2736040effba89b9b00a6f6743a', 30, true),
+    (50, 'A pop album by Lady Gaga', 23.99, 'Lady Gaga', 'Chromatica', '2020-05-29', false, 14, 1, 3, 10, 'https://i.scdn.co/image/ab67616d0000b2736040effba89b9b00a6f6743a', 30, true),
 
     -- Solar Power
-    (50, 'The third studio album by Lorde', 24.99, 'Lorde', 'Solar Power', '2021-08-20', false, 3, 1, 3, 10, 'https://i.scdn.co/image/ab67616d00001e02a5603d487cfa2c30a05cdfaa', 0, false),
+    (50, 'The third studio album by Lorde', 24.99, 'Lorde', 'Solar Power', '2021-08-20', false, 14, 1, 3, 10, 'https://i.scdn.co/image/ab67616d00001e02a5603d487cfa2c30a05cdfaa', 0, false),
 
     -- Happier Than Ever
-    (50, 'Second studio album by Billie Eilish', 22.99, 'Billie Eilish', 'Happier Than Ever', '2021-07-30', false, 3, 1, 3, 9, 'https://i.scdn.co/image/ab67616d00001e022a038d3bf875d23e4aeaa84e', 10, true),
+    (50, 'Second studio album by Billie Eilish', 22.99, 'Billie Eilish', 'Happier Than Ever', '2021-07-30', false, 14, 1, 3, 9, 'https://i.scdn.co/image/ab67616d00001e022a038d3bf875d23e4aeaa84e', 10, true),
 
     -- Montero
-    (50, 'Debut studio album by Lil Nas X', 21.99, 'Lil Nas X', 'Montero', '2021-09-17', false, 5, 1, 3, 8, 'https://i.scdn.co/image/ab67616d00001e02be82673b5f79d9658ec0a9fd', 0, false),
+    (50, 'Debut studio album by Lil Nas X', 21.99, 'Lil Nas X', 'Montero', '2021-09-17', false, 8, 1, 3, 8, 'https://i.scdn.co/image/ab67616d00001e02be82673b5f79d9658ec0a9fd', 0, false),
 
     -- Certified Lover Boy
-    (50, 'Sixth studio album by Drake', 25.99, 'Drake', 'Certified Lover Boy', '2021-09-03', false, 5, 1, 3, 7, 'https://i.scdn.co/image/ab67616d00001e02cd945b4e3de57edd28481a3f', 15, true),
+    (50, 'Sixth studio album by Drake', 25.99, 'Drake', 'Certified Lover Boy', '2021-09-03', false, 8, 1, 3, 7, 'https://i.scdn.co/image/ab67616d00001e02cd945b4e3de57edd28481a3f', 15, true),
 
     -- If I Can't Have Love, I Want Power
-    (50, 'Fourth studio album by Halsey', 23.99, 'Halsey', 'If I Can''t Have Love, I Want Power', '2021-08-27', false, 3, 1, 3, 6, 'https://i.scdn.co/image/ab67616d00001e021f9f8d93bf43b569817af0a4', 0, false),
+    (50, 'Fourth studio album by Halsey', 23.99, 'Halsey', 'If I Can''t Have Love, I Want Power', '2021-08-27', false, 1, 1, 3, 6, 'https://i.scdn.co/image/ab67616d00001e021f9f8d93bf43b569817af0a4', 0, false),
 
     -- Sometimes I Might Be Introvert
-    (50, 'Fourth studio album by Little Simz', 22.99, 'Little Simz', 'Sometimes I Might Be Introvert', '2021-09-03', false, 5, 1, 3, 5, 'https://i.scdn.co/image/ab67616d00001e02aede85ed28c2237a33b63dba', 20, true),
+    (50, 'Fourth studio album by Little Simz', 22.99, 'Little Simz', 'Sometimes I Might Be Introvert', '2021-09-03', false, 8, 1, 3, 5, 'https://i.scdn.co/image/ab67616d00001e02aede85ed28c2237a33b63dba', 20, true),
 
     -- Star-Crossed
-    (50, 'Fifth studio album by Kacey Musgraves', 21.99, 'Kacey Musgraves', 'Star-Crossed', '2021-09-10', false, 6, 1, 3, 4, 'https://i.scdn.co/image/ab67616d00001e024e99b9f7b53886701fa147c5', 0, false),
+    (50, 'Fifth studio album by Kacey Musgraves', 21.99, 'Kacey Musgraves', 'Star-Crossed', '2021-09-10', false, 4, 1, 3, 4, 'https://i.scdn.co/image/ab67616d00001e024e99b9f7b53886701fa147c5', 0, false),
 
     -- Senjutsu
-    (50, 'Seventeenth studio album by Iron Maiden', 26.99, 'Iron Maiden', 'Senjutsu', '2021-09-03', false, 8, 1, 3, 3, 'https://i.scdn.co/image/ab67616d00001e02710ebb0c7d0e81e89b947c7f', 0, false),
+    (50, 'Seventeenth studio album by Iron Maiden', 26.99, 'Iron Maiden', 'Senjutsu', '2021-09-03', false, 13, 1, 3, 3, 'https://i.scdn.co/image/ab67616d00001e02710ebb0c7d0e81e89b947c7f', 0, false),
 
     -- Donda
-    (50, 'Tenth studio album by Kanye West', 27.99, 'Kanye West', 'Donda', '2021-08-29', false, 5, 1, 3, 2, 'https://i.scdn.co/image/ab67616d00001e02cad190f1a73c024e5a40dddd', 25, true),
+    (50, 'Tenth studio album by Kanye West', 27.99, 'Kanye West', 'Donda', '2021-08-29', false, 8, 1, 3, 2, 'https://i.scdn.co/image/ab67616d00001e02cad190f1a73c024e5a40dddd', 25, true),
 
     -- Equals
-    (50, 'Fifth studio album by Ed Sheeran', 24.99, 'Ed Sheeran', '=', '2021-10-29', false, 3, 1, 3, 1, 'https://i.scdn.co/image/ab67616d00001e02ef24c3fdbf856340d55cfeb2', 0, false);
+    (50, 'Fifth studio album by Ed Sheeran', 24.99, 'Ed Sheeran', '=', '2021-10-29', false, 14, 1, 3, 1, 'https://i.scdn.co/image/ab67616d00001e02ef24c3fdbf856340d55cfeb2', 0, false);
 
 INSERT INTO discs (
     vinyl_id,
