@@ -145,3 +145,38 @@ This document describes the latest schema of the database for the vinyl records 
 - **id**: Integer, primary key.
 - **shipping_options_id**: Integer, references the **shipping_options** table.
 - **location_id**: Integer, references the **locations** table.
+
+
+## Deployment
+
+### AWS EC2 Deployment via CDK
+
+#### CDK Setup
+The `Pro04BackendCdkStack` folder in this repository contains the AWS CDK configuration for deploying the backend on an EC2 instance. Key configurations include:
+- **Instance Type**: Define the EC2 instance size based on expected project load.
+- **Security Group**: Configures inbound/outbound rules, such as allowing inbound traffic on the specified `PORT`.
+- **IAM Roles and Permissions**: Manages access permissions required for the application.
+
+#### Environment Variables
+Create a `.env` file in the root directory with any required environment variables, such as:
+- **PORT**: Port number on which the server will run (e.g., `PORT=3000`).
+- **Database URL**: Database connection string or credentials.
+- **JWT_SECRET**: Secret key for authentication, if applicable.
+
+#### Build and Deploy Commands
+
+1. **Build the Project**:
+   ```
+   npm run build
+   ```
+
+#### Deploy Using AWS CDK:
+
+```cdk deploy```
+
+Start the server on the specified port:
+
+```npm start```
+
+
+
